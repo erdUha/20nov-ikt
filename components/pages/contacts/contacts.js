@@ -1,7 +1,7 @@
 var Contacts = React.createClass({
 	render: function() {
 		return(
-			<div id="team">
+			<div id="contacts">
 				<div className="main-text1 offset wow animate__animated animate__backInDown leather">
 					<center>
 						<h1>Контакты</h1>
