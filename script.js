@@ -3,6 +3,24 @@ $(window).on("resize", function() {if (window.innerWidth/window.innerHeight > 1)
 $(document).ready(function () {
 	$("#up-button").hide();
 });
+function bounce(x) {
+	x = x + 0.6;
+	return(
+		Math.sin(x * 2 * Math.cos(x - 0.5) - 1.1) *
+		(1/(1+Math.pow(x-2.4, 6)))
+	);
+}
+$(document).ready(function() {
+	$("#up-button").on("click", function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		for (let i = 0; i < 4.5; i += 0.1) {
+			$("#up-button").animate({
+				bottom: -bounce(i) * 10 + 100
+			}, (i*4) + 4);
+		}
+		$("#up-button").animate({bottom: 100}, 15);
+	});
+});
 var isPhone = false;
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 	var isPhone = true;
@@ -10,8 +28,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 var onBottom = true;
 var lastOnBottom = true;
 $(document).on("scroll", function () {
-	var scroll = ($(document).height() - $(window).scrollTop());
-	if(scroll > 500) {
+	var scroll = ($(document).height() - $(window).scrollTop() - ($(window).height() * 0.5));
+	if(scroll > $(document).height()*0.5) {
 		onBottom = true;
 	}
 	else {
@@ -39,7 +57,7 @@ function typedInit() {
 function setOffsetPercent() {
 	$(".offset").each(function() {
 		var wowHeight = $(this).height();
-		$(this).attr("data-wow-offset", wowHeight);
+		$(this).attr("data-wow-offset", (wowHeight * 0.5) + ($(window).height()*0.09));
 	});
 	new WOW().init();
 }

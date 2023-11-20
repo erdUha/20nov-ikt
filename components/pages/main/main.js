@@ -5,7 +5,7 @@ var MainPage = React.createClass({
 				<div className="wow animate__animated animate__fadeInDown" id="main-head">
 					<div id="typed-strings">
 						<span>GameSmiths</span>
-						<span><font style={{fontFamily: "Playfair Display"}}>Создаем игры с душой</font></span>
+						<span><font style={{fontFamily: "Spectral", fontWeight: 800}}>Создаем игры с душой</font></span>
 					</div>
 					<center><h1 style={{fontWeight: 800}}><span id="typed"></span></h1></center>
 				</div>
