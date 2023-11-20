@@ -2,7 +2,7 @@
 html, body {
     margin: 0; padding: 0;
 	background-color: #EDEDF4;
-
+}
 #wrap {
 	width: 100vw;
 	overflow: hidden;

@@ -59,7 +59,7 @@
 					case 1:
 						React.render(<MainPage />, document.getElementById("content"));
 						typedInit();
-						setOffsetPercent(5);
+						setOffsetPercent(0);
 						break;
 					case 2:
 						React.render(<Onas />, document.getElementById("content"));
@@ -96,7 +96,7 @@
 				document.getElementById("content")
 			);
 			typedInit();
-			setOffsetPercent(5);
+			setOffsetPercent(0);
 
 			// Рендер Футера
 			React.render(
@@ -111,6 +111,5 @@
 			);
 			addOnClick(); // Добавление addEventListener("click") для всех кнопок
 		</script>
-	</head>
 	</body>
 </html>
