@@ -32,11 +32,10 @@ function typedInit() {
 		loop: true,
 	});
 }
-function setOffsetPercent(offset) {
-	offset = Math.round(window.innerHeight * (offset / 100));
+function setOffsetPercent() {
 	$(".offset").each(function() {
 		var wowHeight = $(this).height();
-		$(this).attr("data-wow-offset", wowHeight + offset);
+		$(this).attr("data-wow-offset", wowHeight);
 	});
 	new WOW().init();
 }

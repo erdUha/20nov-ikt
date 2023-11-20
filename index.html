@@ -59,15 +59,15 @@
 					case 1:
 						React.render(<MainPage />, document.getElementById("content"));
 						typedInit();
-						setOffsetPercent(0);
+						setOffsetPercent();
 						break;
 					case 2:
 						React.render(<Onas />, document.getElementById("content"));
-						setOffsetPercent(5);
+						setOffsetPercent();
 						break;
 					case 3:
 						React.render(<Games />, document.getElementById("content"));
-						setOffsetPercent(5);
+						setOffsetPercent();
 						break;
 					case 4:
 						break;
@@ -96,7 +96,7 @@
 				document.getElementById("content")
 			);
 			typedInit();
-			setOffsetPercent(0);
+			setOffsetPercent();
 
 			// Рендер Футера
 			React.render(
