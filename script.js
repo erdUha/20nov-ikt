@@ -3,6 +3,10 @@ $(window).on("resize", function() {if (window.innerWidth/window.innerHeight > 1)
 $(document).ready(function () {
 	$("#up-button").hide();
 });
+var isPhone = false;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+	var isPhone = true;
+}
 var onBottom = true;
 var lastOnBottom = true;
 $(document).on("scroll", function () {
@@ -57,16 +61,27 @@ var isOpeningBurgerMenu = false;
 var burgerMenuRot = 1;
 var openingBurgerMenu;
 var burgerMenu = document.getElementById("m-navpanel");
-function openBurgerMenu() {
-	if (!isOpeningBurgerMenu) {
-		isOpeningBurgerMenu = true;
+if (!isPhone) {
+	function openBurgerMenu() {
+		if (!isOpeningBurgerMenu) {
+			isOpeningBurgerMenu = true;
+			startOpeningBurgerMenu();
+		}
+	}
+	function closeBurgerMenu() {
+		if (!isOpeningBurgerMenu && Math.round(burgerMenuRot) != 1) {
+			isOpeningBurgerMenu = true;
+			startOpeningBurgerMenu();
+		}
+	}
+} else {
+	burgerMenu.style.transition = "0.3s ease-in-out";
+	function openBurgerMenu() {
 		startOpeningBurgerMenu();
 	}
-}
-function closeBurgerMenu() {
-	if (!isOpeningBurgerMenu && Math.round(burgerMenuRot) != 1) {
-		isOpeningBurgerMenu = true;
-		startOpeningBurgerMenu();
+	function closeBurgerMenu() {
+		burgerMenu.style.transform = "rotate(-90deg)";
+		enableScroll();
 	}
 }
 function smooth(x) {
@@ -74,75 +89,101 @@ function smooth(x) {
 		(-Math.cos(x * Math.PI) + 1) / 2
 	);
 }
-function startOpeningBurgerMenu() {
-	var isSecondHalf = Math.round(burgerMenuRot);
-	openingBurgerMenu = setInterval(function() {
-		if (isSecondHalf == 0) {
+if (!isPhone) {
+	function startOpeningBurgerMenu() {
+		var isSecondHalf = Math.round(burgerMenuRot);
+		openingBurgerMenu = setInterval(function() {
+			if (isSecondHalf == 0) {
+				$("#burger-menu-button-close").css("transform", "rotate(-270deg)");
+				burgerMenuRot += 0.05;
+				burgerMenuRot = Math.round(burgerMenuRot*20)/20;
+				if (burgerMenuRot >= 1) {
+					clearInterval(openingBurgerMenu);
+					isOpeningBurgerMenu = false;
+				}
+				enableScroll();
+			}
+			else {
+				$("#burger-menu-button-close").css("transform", "rotate(0deg)");
+				burgerMenuRot -= 0.05;
+				burgerMenuRot = Math.round(burgerMenuRot*20)/20;
+				if (burgerMenuRot <= 0) {
+					clearInterval(openingBurgerMenu);
+					isOpeningBurgerMenu = false;
+				}
+				disableScroll();
+			}
+			burgerMenu.style.transform = "rotate(" + (-smooth(burgerMenuRot)*90) + "deg)";
+			if (!isPhone) {
+				burgerMenu.style.filter = "blur(" + (smooth(burgerMenuRot*2)*5) + "px)";
+			}
+		}, 15);
+	}
+}
+else {
+	function startOpeningBurgerMenu() {
+		var isSecondHalf = Math.round(burgerMenuRot);
 			$("#burger-menu-button-close").css("transform", "rotate(-270deg)");
-			burgerMenuRot += 0.05;
-			burgerMenuRot = Math.round(burgerMenuRot*20)/20;
-			if (burgerMenuRot >= 1) {
-				clearInterval(openingBurgerMenu);
-				isOpeningBurgerMenu = false;
-			}
-			enableScroll();
-		}
-		else {
-			$("#burger-menu-button-close").css("transform", "rotate(0deg)");
-			burgerMenuRot -= 0.05;
-			burgerMenuRot = Math.round(burgerMenuRot*20)/20;
-			if (burgerMenuRot <= 0) {
-				clearInterval(openingBurgerMenu);
-				isOpeningBurgerMenu = false;
-			}
+			burgerMenu.style.transform = "rotate(" + 0 + "deg)";
 			disableScroll();
-		}
-		burgerMenu.style.transform = "rotate(" + (-smooth(burgerMenuRot)*90) + "deg)";
-		burgerMenu.style.filter = "blur(" + (smooth(burgerMenuRot*2)*5) + "px)";
-	}, 15);
+	}
 }
 var isOpeningRaschet = false;
 var raschetRot = 1;
 var openingRaschet;
 var raschet = document.getElementById("raschet");
-function openRaschet() {
-	if (!isOpeningRaschet) {
-		isOpeningRaschet = true;
-		startOpeningRaschet();
+if (!isPhone) {
+	function openRaschet() {
+		if (!isOpeningRaschet) {
+			isOpeningRaschet = true;
+			startOpeningRaschet();
+		}
+	}
+	function closeRaschet() {
+		if (raschetRot != 1) {
+			isOpeningRaschet = true;
+			startOpeningRaschet();
+		}
 	}
 }
-function closeRaschet() {
-	if (raschetRot != 1) {
-		isOpeningRaschet = true;
-		startOpeningRaschet();
+else {
+	function openRaschet() {
+		raschet.style.transform = "rotate(0deg)";
+		disableScroll();
+	}
+	function closeRaschet() {
+		raschet.style.transform = "rotate(90deg)";
+		enableScroll();
 	}
 }
-function startOpeningRaschet() {
-	var isSecondHalf = Math.round(raschetRot);
-	openingRaschet = setInterval(function() {
-		if (isSecondHalf == 0) {
-			$("#raschet-button-close").css("transform", "rotate(270deg)");
-			raschetRot += 0.05;
-			raschetRot = Math.round(raschetRot*20)/20;
-			if (raschetRot >= 1) {
-				clearInterval(openingRaschet);
-				isOpeningRaschet = false;
+if (!isPhone) {
+	function startOpeningRaschet() {
+		var isSecondHalf = Math.round(raschetRot);
+		openingRaschet = setInterval(function() {
+			if (isSecondHalf == 0) {
+				$("#raschet-button-close").css("transform", "rotate(270deg)");
+				raschetRot += 0.05;
+				raschetRot = Math.round(raschetRot*20)/20;
+				if (raschetRot >= 1) {
+					clearInterval(openingRaschet);
+					isOpeningRaschet = false;
+				}
+				enableScroll();
 			}
-			enableScroll();
-		}
-		else {
-			$("#raschet-button-close").css("transform", "rotate(0deg)");
-			raschetRot -= 0.05;
-			raschetRot = Math.round(raschetRot*20)/20;
-			if (raschetRot <= 0) {
-				clearInterval(openingRaschet);
-				isOpeningRaschet = false;
+			else {
+				$("#raschet-button-close").css("transform", "rotate(0deg)");
+				raschetRot -= 0.05;
+				raschetRot = Math.round(raschetRot*20)/20;
+				if (raschetRot <= 0) {
+					clearInterval(openingRaschet);
+					isOpeningRaschet = false;
+				}
+				disableScroll();
 			}
-			disableScroll();
-		}
-		raschet.style.transform = "rotate(" + (smooth(raschetRot)*90) + "deg)";
-		raschet.style.filter = "blur(" + (smooth(raschetRot*2)*5) + "px)";
-	}, 15);
+			raschet.style.transform = "rotate(" + (smooth(raschetRot)*90) + "deg)";
+			raschet.style.filter = "blur(" + (smooth(raschetRot*2)*5) + "px)";
+		}, 15);
+	}
 }
 function raschitat() {
 	var platform = document.getElementById("platform");

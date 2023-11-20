@@ -11,29 +11,35 @@ var Games = React.createClass({
 				</div>
 				<div id="games-img1" data-wow-delay="0.4s" className="wow offset animate__animated animate__fadeInLeft"  width="100%"></div>
 				<div className="main-text2">
-					<center>
-						<p data-wow-delay="0.7s" className="offset wow animate__animated animate__zoomInDown" >
+					<center data-wow-delay="0.7s" className="offset wow animate__animated animate__zoomInDown">
+						<p>
 						GreenPest Авто
-						</p><br></br>
+						</p>
+						<hr></hr>
+						<br></br>
 					</center>
 				</div>
-				<div id="games-img2" data-wow-delay="0" className="wow offset animate__animated animate__fadeInLeft"  width="100%"></div>
+				<div id="games-img2" data-wow-delay="0" className="wow offset animate__animated animate__bounceInRight"  width="100%"></div>
 				<div className="main-text2">
-					<center>
-						<p data-wow-delay="0.3s" className="offset wow animate__animated animate__zoomInDown" >
+					<center data-wow-delay="0.3s" className="offset wow animate__animated animate__zoomInDown" >
+						<p>
 						CraftMine
-						</p><br></br>
+						</p>
+						<hr></hr>
+						<br></br>
 					</center>
 				</div>
-				<div id="games-img3" data-wow-delay="0s" className="wow offset animate__animated animate__fadeInLeft"  width="100%"></div>
+				<div id="games-img3" data-wow-delay="0s" className="wow offset animate__animated animate__flipInX"  width="100%"></div>
 				<div className="main-text2">
-					<center>
-						<p data-wow-delay="0.3s" className="offset wow animate__animated animate__zoomInDown" >
+					<center data-wow-delay="0.3s" className="offset wow animate__animated animate__zoomInDown">
+						<p>
 						Chill Birds
-						</p><br></br>
+						</p>
+						<hr></hr>
+						<br></br>
 					</center>
 				</div>
-				<div className="main-text1 offset wow animate__animated animate__backInLeft red">
+				<div className="main-text1 offset wow animate__animated animate__backInRight red">
 					<center>
 						<h3>
 						Разглядывайте, изучайте, играйте — и наслаждайтесь инновационными игровыми решениями от "GameSmiths". Мы создаем миры, чтобы вы могли исследовать их!

@@ -24,8 +24,8 @@
 	margin: auto;
 	margin-top: 11vw;
 	padding: 3vw 5vw;
-	width: 40vw;
-	font-size: 3vw;
+	width: calc(10vw + 120px);
+	font-size: calc(0.5vw + 12px);
 	cursor: pointer;
 	border-radius: 999px;
 	transition: 0.3s ease-in-out;

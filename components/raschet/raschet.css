@@ -21,7 +21,8 @@
 	margin-top: 3vw;
 	padding: 30px 45px;
 	padding-bottom: 10px;
-	width: 480px;
+	max-width: 480px;
+	width: calc(100vw - 90px);
 	border: 3px solid white;
 	border-radius: 10px;
 	font-weight: 600;
@@ -35,6 +36,7 @@
 	width: 100px;
 	float: right;
 	border-radius: 4px;
+	transition: 0.15s ease-in-out;
 }
 #raschitat-button:hover {
 	background-color: #FB3640;
