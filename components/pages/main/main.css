@@ -1,0 +1,37 @@
+#main-head {
+	background-color: #FB3640;
+}
+#main-img1 {
+	aspect-ratio: 2;
+	background-image: url("../../../static/img/01.jpg");
+	background-size: 100%;
+}
+#main-img2 {
+	aspect-ratio: 554/311;
+	background-image: url("../../../static/img/02.jpg");
+	background-size: 100%;
+}
+#main-img3 {
+	aspect-ratio: 660/439;
+	background-image: url("../../../static/img/03.jpeg");
+	background-size: 100%;
+}
+.main-text1 {
+	padding: 2vw calc(2vw + 5px);
+	background-color: #058ED9;
+	font-size: calc(0.8vw + 8px);
+}
+.main-text2 {
+	margin: 0 8vw;
+	padding: 5vw 0;
+	font-size: calc(0.5vw + 12px);
+	font-weight: 600;
+}
+@media only screen and (max-aspect-ratio: 0.8) {
+	.main-text1 {
+		font-size: 2.5vw;
+	}
+	.main-text2 {
+		font-size: 2.3vw;
+	}
+}
