@@ -19,6 +19,8 @@
 		<link rel="stylesheet" href="./components/pages/main/main.css" />
 		<link rel="stylesheet" href="./components/pages/onas/onas.css" />
 		<link rel="stylesheet" href="./components/pages/games/games.css" />
+		<link rel="stylesheet" href="./components/pages/team/team.css" />
+		<link rel="stylesheet" href="./components/pages/contacts/contacts.css" />
 		<link rel="stylesheet" media="screen and (min-aspect-ratio: 1)" href="./components/footer/footer.css" />
 		<link rel="stylesheet" media="screen and (max-aspect-ratio: 1)" href="./components/footer/m-footer.css" />
 		<script src="./lib/react.js"></script> <!-- react library -->
@@ -51,6 +53,8 @@
 		<script type="text/jsx" src="./components/pages/main/main.js"></script>
 		<script type="text/jsx" src="./components/pages/onas/onas.js"></script>
 		<script type="text/jsx" src="./components/pages/games/games.js"></script>
+		<script type="text/jsx" src="./components/pages/team/team.js"></script>
+		<script type="text/jsx" src="./components/pages/contacts/contacts.js"></script>
 		<script type="text/jsx" src="./components/footer/footer.js"></script>
 		<script type="text/javascript" src="./lib/disableScroll.js"></script>
 		<script type="text/javascript" src="./script.js"></script>
@@ -59,21 +63,35 @@
 			const redirect = (pg) => {
 				switch (pg) {
 					case 1:
-						React.render(<MainPage />, document.getElementById("content"));
-						typedInit();
-						setOffsetPercent();
+						if (!document.getElementById("main")) {
+							React.render(<MainPage />, document.getElementById("content"));
+							typedInit();
+							setOffsetPercent();
+						}
 						break;
 					case 2:
-						React.render(<Onas />, document.getElementById("content"));
-						setOffsetPercent();
+						if (!document.getElementById("onas")) {
+							React.render(<Onas />, document.getElementById("content"));
+							setOffsetPercent();
+						}
 						break;
 					case 3:
-						React.render(<Games />, document.getElementById("content"));
-						setOffsetPercent();
+						if (!document.getElementById("games")) {
+							React.render(<Games />, document.getElementById("content"));
+							setOffsetPercent();
+						}
 						break;
 					case 4:
+						if (!document.getElementById("team")) {
+							React.render(<Team />, document.getElementById("content"));
+							setOffsetPercent();
+						}
 						break;
 					case 5:
+						if (!document.getElementById("contacts")) {
+							React.render(<Contacts />, document.getElementById("content"));
+							setOffsetPercent();
+						}
 						break;
 				}
 				closeBurgerMenu();

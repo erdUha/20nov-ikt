@@ -1,0 +1,15 @@
+#team-img1 {
+	aspect-ratio: 324 / 211;
+	background-image: url(../../../static/img/raz01.png);
+	background-size: 100%;
+}
+#team-img2 {
+	aspect-ratio: 324 / 211;
+	background-image: url(../../../static/img/raz02.png);
+	background-size: 100%;
+}
+#team-img3 {
+	aspect-ratio: 324 / 211;
+	background-image: url(../../../static/img/raz03.png);
+	background-size: 100%;
+}

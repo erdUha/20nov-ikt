@@ -1,3 +1,6 @@
+.main-text-to-top {
+	padding-top: 0 !important;
+}
 #games-img1 {
 	aspect-ratio: 81/45;
 	background-image: url("../../../static/img/06.jpg");

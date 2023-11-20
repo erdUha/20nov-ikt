@@ -29,7 +29,7 @@ var Onas = React.createClass({
 					</center>
 				</div>
 				<div id="onas-img2" data-wow-delay="0s" className="wow offset animate__animated animate__fadeInLeft"  width="100%"></div>
-				<div data-wow-delay="0.5s" className="main-text1 offset wow animate__animated animate__backInLeft red">
+				<div data-wow-delay="0.5s" className="main-text1 offset wow animate__animated animate__backInRight red">
 					<center>
 						<h3>
 						Приготовьтесь к увлекательному путешествию вместе с GameSmiths - игра только начинается!
