@@ -1,9 +1,5 @@
 new WOW().init();
-<<<<<<< HEAD
 $(window).on("resize", function() {if (window.innerWidth/window.innerHeight > 1) closeBurgerMenu()});
-=======
-$(window).on("resize", function() {setOffsetPercent(5); if (window.innerWidth/window.innerHeight > 1) closeBurgerMenu()});
->>>>>>> 8246b93143c23f7bb0e91b6d4d9f1ae3819c92fd
 $(document).ready(function () {
 	$("#up-button").hide();
 });
