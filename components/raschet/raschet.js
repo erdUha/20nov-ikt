@@ -2,7 +2,7 @@ var Raschet = React.createClass({
 	render: function() {
 		return(
 			<div>
-				<img id="raschet-button-close" className="unselectable invert" src="../../icons/x.svg"></img>
+				<img id="raschet-button-close" className="unselectable invert" src="./icons/x.svg"></img>
 				<h1>Форма расчета стоимости игры</h1>
 				<div id="raschet-box">
 					Тип игры:&nbsp;&nbsp;&nbsp;

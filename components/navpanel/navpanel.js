@@ -2,7 +2,7 @@ var Navpanel = React.createClass({
 	render: function() {
 		return(
 			<div>
-				<img className="burger-menu-button invert unselectable" id="burger-menu-button-close" src="../../icons/x.svg"></img>
+				<img className="burger-menu-button invert unselectable" id="burger-menu-button-close" src="./icons/x.svg"></img>
 				<ul>
 					<li className="unselectable" onClick={() => redirect(1)}><a>Главная</a></li>
 					<li className="unselectable" onClick={() => redirect(2)}><a>О нас</a></li>

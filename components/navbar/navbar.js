@@ -3,7 +3,7 @@ var Navbar = React.createClass({ // lol
 		return(
 			<div id="header">
 				<h2 className="unselectable" style={{fontWeight: 800}}><a onClick={() => redirect(1)}>GameSmiths</a></h2>
-				<img className="burger-menu-button invert" id="burger-menu-open" src="../../icons/burger.svg"></img>
+				<img className="burger-menu-button invert" id="burger-menu-open" src="./icons/burger.svg"></img>
 				<div id="navbar">
 					<ul>
 						<li><a className="unselectable" onClick={() => redirect(1)}>Главная</a></li>
