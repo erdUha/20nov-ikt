@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap');
+html, body {
+    margin: 0; padding: 0;
+	background-color: #EDEDF4;
+
+#wrap {
+	width: 100vw;
+	overflow: hidden;
+}
+* {
+    font-family: Manrope;
+}
+a {
+	cursor: pointer;
+}
+.red {
+	background-color: #FB3640;
+}
+.leather {
+	background-color: #F39C6B;
+}
+h1, h2, h3, h4 {
+	margin: 0;
+	padding: 20px 30px;
+}
+.unselectable {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.invert {
+	filter: invert(1);
+}
+.burger-menu-button {
+	position: absolute;
+	right: 4vw;
+	top: 2vw;
+	z-index: 12;
+	width: 8vw;
+	height: 8vw;
+	cursor: pointer;
+}
+#burger-menu-button-close {
+	transform: rotate(-270deg);
+	transition: 0.5s ease-out;
+}
+#content {
+	overflow: hidden;
+	max-width: 960px;
+	background-color: #fff;
+	width: calc(100% - 80px);
+	margin: auto;
+}
+#up-button {
+	z-index: 10;
+	position: fixed;
+	right: 20px;
+	bottom: 30px;
+	background-image: url(./icons/go-up.svg);
+	background-size: 100%;
+	width: 80px;
+	height: 80px;
+	border-radius: 99px;
+	-webkit-filter: invert(43%) sepia(70%) saturate(7488%) hue-rotate(342deg) brightness(110%) contrast(97%) opacity(70%) drop-shadow( 3px 4px 3px rgba(0,0,0,0.35));
+}
+@media only screen and (min-aspect-ratio: 1) {
+	#burger-menu-open {
+		visibility: hidden;
+	}
+}
+@media only screen and (max-aspect-ratio: 1) {
+	#content {
+		width: 100%;
+		max-width: none;
+	}
+}
